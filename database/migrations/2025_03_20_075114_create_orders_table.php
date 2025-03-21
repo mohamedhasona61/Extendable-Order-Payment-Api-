@@ -15,6 +15,8 @@ return new class extends Migration
             $table->enum('status', ['pending', 'confirmed', 'cancelled'])->default('pending');
             $table->json('shipping_address');
             $table->string('payment_method');
+            $table->softDeletes(); // Adds deleted_at column
+
             $table->timestamps();
         });
     }

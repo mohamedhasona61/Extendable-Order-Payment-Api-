@@ -18,6 +18,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->softDeletes(); // Adds deleted_at column
             $table->timestamps();
         });
         Schema::create('password_reset_tokens', function (Blueprint $table) {
